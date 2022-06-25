@@ -1,8 +1,8 @@
-These are basic multi-signature smart contracts, one for ether, and the other for ERC20 tokens.
+These are basic multi-signature smart contracts, one for ether, one for ERC20 tokens, and one for external contract function calls.
 
-Both contracts can hold balances for multiple users, and require a 2/3 majority Admin vote.
 
 **MultiSigContract**
+
 *Description:*
 Multi-signature design for calling external contract functions.
 
