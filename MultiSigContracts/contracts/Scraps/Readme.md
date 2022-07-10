@@ -1,0 +1,2 @@
+**Scraps**
+These are scrapped contracts that were created first, then improved upon to become the Treasury and Multi-Sig contracts. Each has its own NatSpec description detailing its purpose and alleged uses.

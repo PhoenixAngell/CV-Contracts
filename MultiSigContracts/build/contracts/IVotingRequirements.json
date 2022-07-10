@@ -1,0 +1,311 @@
+{
+  "contractName": "IVotingRequirements",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "",
+          "type": "bytes32"
+        }
+      ],
+      "name": "votesRequired",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.8.0+commit.c7dfd78e\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"}],\"name\":\"votesRequired\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{\"votesRequired(bytes32)\":{\"notice\":\"Returns the multi-sig threshold for the contract\"}},\"version\":1}},\"settings\":{\"compilationTarget\":{\"/D/Documents/Solidity/multisigcontracts/contracts/V3/IVotingRequirements.sol\":\"IVotingRequirements\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/D/Documents/Solidity/multisigcontracts/contracts/V3/IVotingRequirements.sol\":{\"keccak256\":\"0x4b4612afb84e3525d3e3a7f8b844c43437ee93d9c2b04a5754dec0cd5bbda10c\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://9c4e7d28b414df20eb9613ae09e24e841980b2822a6bcb03fb6431b014c3f8a2\",\"dweb:/ipfs/QmNdqC3Bi15xddJ2ieoXZSYSfrjywo5i6rxmxvJJz7xjmv\"]}},\"version\":1}",
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "immutableReferences": {},
+  "generatedSources": [],
+  "deployedGeneratedSources": [],
+  "sourceMap": "",
+  "deployedSourceMap": "",
+  "source": "/**\r\n * @dev Only one of these functions are required, depending on whether a role system (i.e. AccessControl) was implemented. Contracts that do not implement a role system can provide 0 in the General Multi-Sig V3 contract, which will then call votesRequired instead of roleVotesRequired.\r\n */\r\n\r\n//SPDX-License-Identifier: MIT\r\npragma solidity ^0.8.0;\r\n\r\ninterface IVotingRequirements {\r\n  \r\n  /**\r\n   * @notice Returns the multi-sig threshold for the contract\r\n   */\r\n  function votesRequired(bytes32) external returns (uint256);\r\n}",
+  "sourcePath": "D:\\Documents\\Solidity\\multisigcontracts\\contracts\\V3\\IVotingRequirements.sol",
+  "ast": {
+    "absolutePath": "/D/Documents/Solidity/multisigcontracts/contracts/V3/IVotingRequirements.sol",
+    "exportedSymbols": {
+      "IVotingRequirements": [
+        7177
+      ]
+    },
+    "id": 7178,
+    "license": "MIT",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 7168,
+        "literals": [
+          "solidity",
+          "^",
+          "0.8",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "331:23:22"
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "fullyImplemented": false,
+        "id": 7177,
+        "linearizedBaseContracts": [
+          7177
+        ],
+        "name": "IVotingRequirements",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "documentation": {
+              "id": 7169,
+              "nodeType": "StructuredDocumentation",
+              "src": "397:73:22",
+              "text": " @notice Returns the multi-sig threshold for the contract"
+            },
+            "functionSelector": "a00f8e2b",
+            "id": 7176,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "votesRequired",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 7172,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 7171,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 7176,
+                  "src": "497:7:22",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 7170,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "497:7:22",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "496:9:22"
+            },
+            "returnParameters": {
+              "id": 7175,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 7174,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 7176,
+                  "src": "524:7:22",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 7173,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "524:7:22",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "523:9:22"
+            },
+            "scope": 7177,
+            "src": "474:59:22",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "scope": 7178,
+        "src": "358:178:22"
+      }
+    ],
+    "src": "331:205:22"
+  },
+  "legacyAST": {
+    "absolutePath": "/D/Documents/Solidity/multisigcontracts/contracts/V3/IVotingRequirements.sol",
+    "exportedSymbols": {
+      "IVotingRequirements": [
+        7177
+      ]
+    },
+    "id": 7178,
+    "license": "MIT",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 7168,
+        "literals": [
+          "solidity",
+          "^",
+          "0.8",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "331:23:22"
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "fullyImplemented": false,
+        "id": 7177,
+        "linearizedBaseContracts": [
+          7177
+        ],
+        "name": "IVotingRequirements",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "documentation": {
+              "id": 7169,
+              "nodeType": "StructuredDocumentation",
+              "src": "397:73:22",
+              "text": " @notice Returns the multi-sig threshold for the contract"
+            },
+            "functionSelector": "a00f8e2b",
+            "id": 7176,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "votesRequired",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 7172,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 7171,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 7176,
+                  "src": "497:7:22",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 7170,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "497:7:22",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "496:9:22"
+            },
+            "returnParameters": {
+              "id": 7175,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 7174,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 7176,
+                  "src": "524:7:22",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 7173,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "524:7:22",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "523:9:22"
+            },
+            "scope": 7177,
+            "src": "474:59:22",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "scope": 7178,
+        "src": "358:178:22"
+      }
+    ],
+    "src": "331:205:22"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.8.0+commit.c7dfd78e.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.4.1",
+  "updatedAt": "2022-07-05T22:06:02.259Z",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {},
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {
+      "votesRequired(bytes32)": {
+        "notice": "Returns the multi-sig threshold for the contract"
+      }
+    },
+    "version": 1
+  }
+}
