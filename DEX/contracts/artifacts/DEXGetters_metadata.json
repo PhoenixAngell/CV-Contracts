@@ -1,0 +1,397 @@
+{
+	"compiler": {
+		"version": "0.8.0+commit.c7dfd78e"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "_input",
+						"type": "string"
+					}
+				],
+				"name": "_keccak256",
+				"outputs": [
+					{
+						"internalType": "bytes32",
+						"name": "_output",
+						"type": "bytes32"
+					}
+				],
+				"stateMutability": "pure",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes32",
+						"name": "_ticker",
+						"type": "bytes32"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_amount",
+						"type": "uint256"
+					}
+				],
+				"name": "_marketBuyCost",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "orderCost",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes32",
+						"name": "_ticker",
+						"type": "bytes32"
+					},
+					{
+						"internalType": "enum DEXGetters.SIDE",
+						"name": "_side",
+						"type": "uint8"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_index",
+						"type": "uint256"
+					}
+				],
+				"name": "getLimitPrice",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes32",
+						"name": "_ticker",
+						"type": "bytes32"
+					},
+					{
+						"internalType": "enum DEXGetters.SIDE",
+						"name": "_side",
+						"type": "uint8"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_index",
+						"type": "uint256"
+					}
+				],
+				"name": "getOrderAmount",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes32",
+						"name": "_ticker",
+						"type": "bytes32"
+					},
+					{
+						"internalType": "enum DEXGetters.SIDE",
+						"name": "_side",
+						"type": "uint8"
+					}
+				],
+				"name": "getOrderBook",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "uint256",
+								"name": "id",
+								"type": "uint256"
+							},
+							{
+								"internalType": "address",
+								"name": "trader",
+								"type": "address"
+							},
+							{
+								"internalType": "enum DEXGetters.SIDE",
+								"name": "side",
+								"type": "uint8"
+							},
+							{
+								"internalType": "bytes32",
+								"name": "ticker",
+								"type": "bytes32"
+							},
+							{
+								"internalType": "uint256",
+								"name": "amount",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "price",
+								"type": "uint256"
+							}
+						],
+						"internalType": "struct DEXGetters.Order[]",
+						"name": "",
+						"type": "tuple[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes32",
+						"name": "_ticker",
+						"type": "bytes32"
+					},
+					{
+						"internalType": "enum DEXGetters.SIDE",
+						"name": "_side",
+						"type": "uint8"
+					}
+				],
+				"name": "getOrderBookLength",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes32",
+						"name": "_ticker",
+						"type": "bytes32"
+					},
+					{
+						"internalType": "enum DEXGetters.SIDE",
+						"name": "_side",
+						"type": "uint8"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_index",
+						"type": "uint256"
+					}
+				],
+				"name": "getOrderID",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes32",
+						"name": "_ticker",
+						"type": "bytes32"
+					},
+					{
+						"internalType": "enum DEXGetters.SIDE",
+						"name": "_side",
+						"type": "uint8"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_index",
+						"type": "uint256"
+					}
+				],
+				"name": "getOrderPrice",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes32",
+						"name": "",
+						"type": "bytes32"
+					},
+					{
+						"internalType": "enum DEXGetters.SIDE",
+						"name": "",
+						"type": "uint8"
+					},
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "orderBook",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "id",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "trader",
+						"type": "address"
+					},
+					{
+						"internalType": "enum DEXGetters.SIDE",
+						"name": "side",
+						"type": "uint8"
+					},
+					{
+						"internalType": "bytes32",
+						"name": "ticker",
+						"type": "bytes32"
+					},
+					{
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "price",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "orderID",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"DEX/contracts/DEXGetters.sol": "DEXGetters"
+		},
+		"evmVersion": "istanbul",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"DEX/contracts/DEX.sol": {
+			"keccak256": "0x2ad475bf6614d54ea374ab0a1803fd656d49771ad64c08c85694a4cb8fa09cb3",
+			"urls": [
+				"bzz-raw://3cf2e9c44badb82135f40d09847af7b1579f49cf6f210dd72d88c5f3a66b0403",
+				"dweb:/ipfs/QmX1S1s9xcxnpd7LpyNWiqCigjsP2CLsD5aeHEJ1VnMqJe"
+			]
+		},
+		"DEX/contracts/DEXGetters.sol": {
+			"keccak256": "0x3f93e8403e898346da6b9b2bcfabf7858041c1753e6b2b4df7e7e5e0e615821e",
+			"urls": [
+				"bzz-raw://1c9b2b9d15bf0828cf920a2488102ac152eddb7e2c5472cace81190623f5b3e9",
+				"dweb:/ipfs/QmZweBSMpPPZRPaXDisghTeVvpGfqDriT8FgkogmXKNrcR"
+			]
+		},
+		"DEX/contracts/DEXWallet.sol": {
+			"keccak256": "0xcdd394941071a1bbc647ed86c08d1df79744a2d873473be9e7ee48da7243b3a9",
+			"urls": [
+				"bzz-raw://79fcdf62fe2ef7843ead8070fc04b28e7ce7179c0a34a08920fde62c774c24df",
+				"dweb:/ipfs/QmRqPXg98JAVWg3gbA5eJQGkJire2caMqSnwtqk9BBCQfJ"
+			]
+		},
+		"DEX/contracts/OpenZeppelinDependencies/Context.sol": {
+			"keccak256": "0xf930d2df426bfcfc1f7415be724f04081c96f4fb9ec8d0e3a521c07692dface0",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://fc2bfdea0d2562c76fb3c4cf70a86c6ba25c5a30e8f8515c95aafdf8383f8395",
+				"dweb:/ipfs/QmTbFya18786ckJfLYUoWau9jBTKfmWnWm5XSViWvB7PXN"
+			]
+		},
+		"DEX/contracts/OpenZeppelinDependencies/IERC20.sol": {
+			"keccak256": "0xf8e8d118a7a8b2e134181f7da655f6266aa3a0f9134b2605747139fcb0c5d835",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://9ec48567e7ad06acb670980d5cdf3fd7f3949bf12894f02d68c3bb43e75aa84f",
+				"dweb:/ipfs/QmaG3R2J9cz92YT77vFjYrjMNU2wHp4ypwYD62HqDUqS5U"
+			]
+		},
+		"DEX/contracts/OpenZeppelinDependencies/Ownable.sol": {
+			"keccak256": "0xf8e75f3e1f01e89a8d14ddcb13ce7543a45dd7e8070f6d033dfa62751ec9e979",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://1e34f5fb1c5199898faf910218ac2898f1d11887fc6c84431790c7e46473c3ef",
+				"dweb:/ipfs/QmUDMD6g4iCFTV1pHJKfHbLwyajMNFsagGNH2wV8KMp8gr"
+			]
+		},
+		"DEX/contracts/OpenZeppelinDependencies/SafeMath.sol": {
+			"keccak256": "0x2526b7c6a366fc211bbc176078ab02b83833e7682abcc5b3bed9d700b34e2a3e",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://5f9529d3d365e8415155cee11394e0f7c0de2152b601b7e77508fce16cb4a509",
+				"dweb:/ipfs/QmVhbcLVsAzvqfjsdLwy25XMjgVJm7Z3w2JCNiNbZF2GHT"
+			]
+		}
+	},
+	"version": 1
+}

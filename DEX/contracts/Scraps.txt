@@ -1,0 +1,194 @@
+//Internal function that fills market buy orders;
+  function _fillBuyOrder(bytes32 _ticker, uint _amount) internal {
+    uint orderRemaining = _amount;
+
+    for (uint i = 0; orderRemaining > 0; i++) {
+      Order[] storage newOrder = orderBook[_ticker][SIDE.SELL];
+      newOrder[i];
+      address trader = newOrder[i].trader;
+
+      if (orderRemaining >= newOrder[i].amount) {
+        uint orderPrice = getOrderPrice(_ticker, SIDE.SELL, i);
+        uint orderAmount = getOrderAmount(_ticker, SIDE.SELL, i);
+
+        balances[trader][ETH] += orderPrice;
+        balances[trader][_ticker] -= orderAmount;
+
+        balances[msg.sender][ETH] -= orderPrice;
+        balances[msg.sender][_ticker] += orderAmount;
+
+        orderRemaining -= newOrder[i].amount;
+        _removeOrder(_ticker, SIDE.SELL, i);
+      }
+
+      if (orderRemaining < newOrder[i].amount && orderRemaining != 0) {
+        newOrder[i].amount -= orderRemaining;
+        uint remainingAmount = newOrder[i].amount;
+        uint limitPrice = getLimitPrice(_ticker, SIDE.SELL, i);
+
+        balances[trader][ETH] += remainingAmount.mul(limitPrice);
+        balances[trader][_ticker] -= remainingAmount;
+
+        balances[msg.sender][ETH] -= remainingAmount.mul(limitPrice);
+        balances[msg.sender][_ticker] += remainingAmount;
+        break;
+      }
+    }
+  }
+
+  //Internal function that fills market sell orders;
+  function _fillSellOrder(bytes32 _ticker, uint _amount) internal {
+    uint orderRemaining = _amount;
+
+    for (uint i = 0; orderRemaining > 0; i++) {
+      Order[] storage newOrder = orderBook[_ticker][SIDE.SELL];
+      newOrder[i];
+      address trader = newOrder[i].trader;
+
+      if (orderRemaining >= newOrder[i].amount) {
+        uint orderPrice = getOrderPrice(_ticker, SIDE.SELL, i);
+        uint orderAmount = getOrderAmount(_ticker, SIDE.SELL, i);
+
+        balances[msg.sender][ETH] += orderPrice;
+        balances[msg.sender][_ticker] -= orderAmount;
+
+        balances[trader][ETH] -= orderPrice;
+        balances[trader][_ticker] += orderAmount;
+
+        orderRemaining -= newOrder[i].amount;
+        _removeOrder(_ticker, SIDE.BUY, i);
+      }
+
+      if (orderRemaining < newOrder[i].amount && orderRemaining != 0) {
+        newOrder[i].amount -= orderRemaining;
+        uint remainingAmount = newOrder[i].amount;
+
+        balances[msg.sender][ETH] += remainingAmount.mul(getLimitPrice(_ticker, SIDE.BUY, i));
+        balances[msg.sender][_ticker] -= remainingAmount;
+
+        balances[trader][ETH] -= remainingAmount.mul(getLimitPrice(_ticker, SIDE.BUY, i));
+        balances[trader][_ticker] += remainingAmount;
+        break;
+      }
+    }
+  }
+
+  pragma solidity ^0.8.0;
+
+  import "./DEXWallet.sol";
+  import "./DEXGetters.sol";
+  import "./DEX.sol";
+  import "../node_modules/@openzeppelin/contracts/utils/math/SafeMath.sol";
+
+  contract DEXInterface is DEX {
+    using SafeMath for uint256;
+
+  //MODIFY createLimitOrder() to deduct from user's account when limit order is placed;
+  //MODIFY RemoveOrder() to add to user's account when limit order is cancelled;
+  //CREATE system so overlapping buy/sell orders will automatically fill each other;
+
+    //User facing function for creating limit orders;
+      function createLimitOrder(SIDE _side, bytes32 _ticker, uint _amount, uint _price) external {
+        if (_side == SIDE.SELL){
+          require(balances[msg.sender][_ticker] >= _amount, "Insufficient tokens");
+        }
+        else if (_side == SIDE.BUY){
+          require(balances[msg.sender][ETH] >= _amount.mul(_price), "Insufficient ETH");
+        }
+
+        Order memory newOrder = Order(orderID, msg.sender, _side, _ticker, _amount, _price);
+        orderBook[_ticker][_side].push(newOrder);
+        orderID++;
+
+        _sort(_side, _ticker);
+
+      }
+
+    //User-facing function for creating market order;
+      function CreateMarketOrder(bytes32 _ticker, SIDE _side, uint256 _amount) external {
+        if(_side == SIDE.SELL){
+          require(balances[msg.sender][_ticker] >= _amount, "Insufficient token balance");
+          _fillSellOrder(_ticker, _amount);
+        }
+        if(_side == SIDE.BUY){
+          require(balances[msg.sender][ETH] >= _marketBuyCost(_ticker, _amount), "Insufficient ETH");
+          _fillBuyOrder(_ticker, _amount);
+        }
+      }
+
+    //User facing remove function;
+      function RemoveOrder(bytes32 _ticker, SIDE _side, uint _ID) external {
+        Order[] memory removedOrder = orderBook[_ticker][_side];
+        uint _index = _findOrderIndex(_ID, _ticker, _side);
+
+        require(removedOrder[_index].trader == msg.sender, "Only trader can remove order");
+        _removeOrder(_ticker, _side, _index);
+      }
+
+  }
+
+
+
+
+  function _sort(SIDE _side, bytes32 _ticker) internal {
+    Order[] storage ORDER = orderBook[_ticker][_side];
+
+    if (_side == SIDE.BUY) {
+
+      for (uint i = ORDER.length - 1; i >= 1; i--) {
+        if (ORDER[i].price > ORDER[i - 1].price) {
+          Order memory newOrder = ORDER[i];
+          Order memory oldOrder = ORDER[i - 1];
+          ORDER[i - 1] = newOrder;
+          ORDER[i] = oldOrder;
+        }
+        else if (ORDER[i].price < ORDER[i - 1].price) {
+          break;
+        }
+      }
+    }
+
+    if (_side == SIDE.SELL) {
+
+      for (uint i = ORDER.length - 1; i >= 1; i--) {
+        if (ORDER[i].price < ORDER[i - 1].price) {
+          Order memory newOrder = ORDER[i];
+          Order memory oldOrder = ORDER[i - 1];
+          ORDER[i - 1] = newOrder;
+          ORDER[i] = oldOrder;
+        }
+        else if (ORDER[i].price < ORDER[i - 1].price) {
+          break;
+        }
+      }
+    }
+  }
+
+//Bubble sorting algorithm for removing orders;
+  function _sortRemove(SIDE _side, bytes32 _ticker) internal {
+    Order[] storage ORDER = orderBook[_ticker][_side];
+
+    if (_side == SIDE.BUY) {
+      for (uint i = 0; i <= ORDER.length - 1; i++) {
+        if (ORDER[i].price < ORDER[i + 1].price) {
+          Order memory newOrder = ORDER[i];
+          Order memory oldOrder = ORDER[i + 1];
+          ORDER[i + 1] = newOrder;
+          ORDER[i] = oldOrder;
+        }
+        else if (ORDER[i].price >= ORDER[i + 1].price) { break; }
+      }
+    }
+
+    if (_side == SIDE.SELL) {
+      for (uint i = 0; i <= ORDER.length - 1; i++) {
+        if (ORDER[i].price > ORDER[i + 1].price) {
+          Order memory newOrder = ORDER[i];
+          Order memory oldOrder = ORDER[i + 1];
+          ORDER[i + 1] = newOrder;
+          ORDER[i] = oldOrder;
+        }
+        else if (ORDER[i].price <= ORDER[i + 1].price) { break; }
+      }
+    }
+  }

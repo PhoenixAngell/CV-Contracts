@@ -1,0 +1,249 @@
+{
+  "contractName": "DEXGettersMisc",
+  "abi": [],
+  "metadata": "{\"compiler\":{\"version\":\"0.8.0+commit.c7dfd78e\"},\"language\":\"Solidity\",\"output\":{\"abi\":[],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"/C/Users/solus/documents/solidity/dex/contracts/DEXGettersMisc.sol\":\"DEXGettersMisc\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/C/Users/solus/documents/solidity/dex/contracts/DEX.sol\":{\"keccak256\":\"0x6aecfd5f18356c189c89c4c902cb6bd020acd33ffda4e5ed3509ed7ea10815b4\",\"urls\":[\"bzz-raw://a337d8c558cf1390a85c546e1b5fba36482f8d010566c170f752c11fe25a1861\",\"dweb:/ipfs/QmcKdrwB3Ehcc8W78XbAqYkkY37zw1XuqayWApCwcYXXAj\"]},\"/C/Users/solus/documents/solidity/dex/contracts/DEXGetters.sol\":{\"keccak256\":\"0xca9f78dc33d847abef6943dd382eca710be7c0b796e7853585de193dfec61d16\",\"urls\":[\"bzz-raw://c10b5e15bdfdeee178e1f79a99719e4122a0ab8c32cc92ae0f475a1351ef9d60\",\"dweb:/ipfs/QmNjFoAa1frpaBzz6DcxAeESuW5hXDvzuFkUDaVjD1Dz1X\"]},\"/C/Users/solus/documents/solidity/dex/contracts/DEXGettersMisc.sol\":{\"keccak256\":\"0xe4a9f31c4d3d27c9510a5c8e393138a606e291b1dae6d7e318b1721ec2f33e77\",\"urls\":[\"bzz-raw://7a3e7e956e6011ef5bb0c195ad7b35950273783e3664f9b6a4d1cf87bdcf2445\",\"dweb:/ipfs/QmdcmwRieeFVwcJXv9uUMP3FzdgdVuLruqutWhyoadiM25\"]},\"/C/Users/solus/documents/solidity/dex/contracts/DEXWallet.sol\":{\"keccak256\":\"0xf2c485c17967779368a70f7a6ebb94cab75cc355c71dea6a6d7e0ba24f8c1b6e\",\"urls\":[\"bzz-raw://52ab238d05c8189d255adad2cec6d2708b64f188d4c7f683533eec53ebebe7c4\",\"dweb:/ipfs/QmRajjMwKPTArJyFqKJwXtHS7MY5666QbGoi1UH9z8W5VR\"]},\"/C/Users/solus/documents/solidity/dex/node_modules/@openzeppelin/contracts/access/Ownable.sol\":{\"keccak256\":\"0x1cae4f85f114ff17b90414f5da67365b1d00337abb5bce9bf944eb78a2c0673c\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://d5ff16b336ce8f906478d5f2eecc6435e00833bdc0b92f6b209cf9e92cb5b2b7\",\"dweb:/ipfs/QmRD1rAZEqQ73C33cdA3QoUyBDMEWnNKNMc6PNkAZWHeQQ\"]},\"/C/Users/solus/documents/solidity/dex/node_modules/@openzeppelin/contracts/token/ERC20/IERC20.sol\":{\"keccak256\":\"0xf8e8d118a7a8b2e134181f7da655f6266aa3a0f9134b2605747139fcb0c5d835\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://9ec48567e7ad06acb670980d5cdf3fd7f3949bf12894f02d68c3bb43e75aa84f\",\"dweb:/ipfs/QmaG3R2J9cz92YT77vFjYrjMNU2wHp4ypwYD62HqDUqS5U\"]},\"/C/Users/solus/documents/solidity/dex/node_modules/@openzeppelin/contracts/utils/Context.sol\":{\"keccak256\":\"0xf930d2df426bfcfc1f7415be724f04081c96f4fb9ec8d0e3a521c07692dface0\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://fc2bfdea0d2562c76fb3c4cf70a86c6ba25c5a30e8f8515c95aafdf8383f8395\",\"dweb:/ipfs/QmTbFya18786ckJfLYUoWau9jBTKfmWnWm5XSViWvB7PXN\"]},\"/C/Users/solus/documents/solidity/dex/node_modules/@openzeppelin/contracts/utils/math/SafeMath.sol\":{\"keccak256\":\"0x2526b7c6a366fc211bbc176078ab02b83833e7682abcc5b3bed9d700b34e2a3e\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://5f9529d3d365e8415155cee11394e0f7c0de2152b601b7e77508fce16cb4a509\",\"dweb:/ipfs/QmVhbcLVsAzvqfjsdLwy25XMjgVJm7Z3w2JCNiNbZF2GHT\"]}},\"version\":1}",
+  "bytecode": "0x6080604052348015600f57600080fd5b50603f80601d6000396000f3fe6080604052600080fdfea2646970667358221220c03778043c20c8f76716b723ef1ea8d6748a74dc5310e5cbd9ad019242005bf264736f6c63430008000033",
+  "deployedBytecode": "0x6080604052600080fdfea2646970667358221220c03778043c20c8f76716b723ef1ea8d6748a74dc5310e5cbd9ad019242005bf264736f6c63430008000033",
+  "immutableReferences": {},
+  "generatedSources": [],
+  "deployedGeneratedSources": [],
+  "sourceMap": "152:3359:2:-:0;;;;;;;;;;;;;;;;;;;",
+  "deployedSourceMap": "152:3359:2:-:0;;;;;",
+  "source": "pragma solidity ^0.8.0;\r\n\r\nimport \"./DEXWallet.sol\";\r\nimport \"./DEX.sol\";\r\nimport \"../node_modules/@openzeppelin/contracts/utils/math/SafeMath.sol\";\r\n\r\ncontract DEXGettersMisc {\r\n  using SafeMath for uint256;\r\n/*\r\n  enum SIDE { BUY, SELL }\r\n  SIDE side;\r\n\r\n  struct Order {\r\n    uint id;\r\n    address trader;\r\n    SIDE side;\r\n    bytes32 ticker;\r\n    uint amount;\r\n    uint price;\r\n}\r\n\r\nuint public orderID = 0;\r\nbool _orderRemoved;\r\n\r\nOrder[] orderbook;\r\n\r\n//Each asset has two orderbooks, one for buying and one for selling;\r\n//bytes32 is ticker symbol, and SIDE is BUY/SELL enum;\r\n  mapping(bytes32 => mapping(SIDE => Order[])) public orderBook;\r\n  string errorMsg = \"Orderbook empty\";\r\n\r\n  //Getter function to retrieve orderbook for ticker/side;\r\n    function getOrderBook(bytes32 _ticker, SIDE _side) public view returns(Order[] memory) {\r\n      require(orderBook[_ticker][_side].length > 0, errorMsg);\r\n      return orderBook[_ticker][_side];\r\n    }\r\n\r\n    function getOrderBookLength(bytes32 _ticker, SIDE _side) public view returns(uint) {\r\n      return orderBook[_ticker][_side].length;\r\n    }\r\n\r\n  //Getter function to retrieve order token amount;\r\n    function getOrderAmount(bytes32 _ticker, SIDE _side, uint _index) public view returns(uint256) {\r\n      require(orderBook[_ticker][_side].length > 0, errorMsg);\r\n      Order[] memory ORDER = orderBook[_ticker][_side];\r\n      return ORDER[_index].amount;\r\n    }\r\n\r\n  //Getter function to retrieve order's ETH price per token;\r\n    function getLimitPrice(bytes32 _ticker, SIDE _side, uint _index) public view returns(uint256) {\r\n      require(orderBook[_ticker][_side].length > 0, errorMsg);\r\n      Order[] memory ORDER = orderBook[_ticker][_side];\r\n      return ORDER[_index].price;\r\n    }\r\n\r\n  //Getter function to retrieve order's total ETH price;\r\n    function getOrderPrice(bytes32 _ticker, SIDE _side, uint _index) public view returns(uint256) {\r\n      require(orderBook[_ticker][_side].length > 0, errorMsg);\r\n      uint limitPrice = getLimitPrice(_ticker, _side, _index);\r\n      uint orderAmount = getOrderAmount(_ticker, _side, _index);\r\n      return limitPrice.mul(orderAmount);\r\n      }\r\n\r\n  //Getter function for calculating total ETH cost of a market order;\r\n    function _marketBuyCost(bytes32 _ticker, uint256 _amount) public view returns (uint orderCost) {\r\n      Order[] memory tempORDER = orderBook[_ticker][SIDE.SELL];\r\n      orderCost = 0;\r\n      if(tempORDER.length == 0) {\r\n        return orderCost;\r\n      }\r\n      else {\r\n        for (uint i = 0; _amount >= 0; i++) {\r\n          //tempORDER[i];\r\n          if (_amount >= tempORDER[i].amount) {\r\n            uint fillPrice = getOrderPrice(_ticker, SIDE.SELL, i);\r\n            orderCost = orderCost.add(fillPrice);\r\n            _amount = _amount.sub(tempORDER[i].amount);\r\n          }\r\n\r\n          if (_amount < tempORDER[i].amount && _amount > 0) {\r\n            uint partialFillPrice = _amount * tempORDER[i].price;\r\n            orderCost = orderCost.add(partialFillPrice);\r\n            break;\r\n          }\r\n          if (_amount == 0) { break; }\r\n        }\r\n        return orderCost;\r\n      }\r\n    }\r\n\r\n  //Getter function that translates order ID to orderbook index;\r\n    function _findOrderIndex(uint _ID, bytes32 _ticker, SIDE _side) internal view returns(uint i) {\r\n      Order[] memory findOrder = orderBook[_ticker][_side];\r\n\r\n      for (i = 0; i < findOrder.length; i++) {\r\n        if (findOrder[i].id == _ID) {\r\n          return i;\r\n        }\r\n      }\r\n    }\r\n\r\n*/\r\n}\r\n",
+  "sourcePath": "C:\\Users\\solus\\documents\\solidity\\dex\\contracts\\DEXGettersMisc.sol",
+  "ast": {
+    "absolutePath": "/C/Users/solus/documents/solidity/dex/contracts/DEXGettersMisc.sol",
+    "exportedSymbols": {
+      "DEX": [
+        930
+      ],
+      "DEXGettersMisc": [
+        1363
+      ],
+      "DEXWallet": [
+        1616
+      ],
+      "SafeMath": [
+        2139
+      ]
+    },
+    "id": 1364,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 1356,
+        "literals": [
+          "solidity",
+          "^",
+          "0.8",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:2"
+      },
+      {
+        "absolutePath": "/C/Users/solus/documents/solidity/dex/contracts/DEXWallet.sol",
+        "file": "./DEXWallet.sol",
+        "id": 1357,
+        "nodeType": "ImportDirective",
+        "scope": 1364,
+        "sourceUnit": 1617,
+        "src": "27:25:2",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "/C/Users/solus/documents/solidity/dex/contracts/DEX.sol",
+        "file": "./DEX.sol",
+        "id": 1358,
+        "nodeType": "ImportDirective",
+        "scope": 1364,
+        "sourceUnit": 931,
+        "src": "54:19:2",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "/C/Users/solus/documents/solidity/dex/node_modules/@openzeppelin/contracts/utils/math/SafeMath.sol",
+        "file": "../node_modules/@openzeppelin/contracts/utils/math/SafeMath.sol",
+        "id": 1359,
+        "nodeType": "ImportDirective",
+        "scope": 1364,
+        "sourceUnit": 2140,
+        "src": "75:73:2",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "fullyImplemented": true,
+        "id": 1363,
+        "linearizedBaseContracts": [
+          1363
+        ],
+        "name": "DEXGettersMisc",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "id": 1362,
+            "libraryName": {
+              "id": 1360,
+              "name": "SafeMath",
+              "nodeType": "IdentifierPath",
+              "referencedDeclaration": 2139,
+              "src": "187:8:2"
+            },
+            "nodeType": "UsingForDirective",
+            "src": "181:27:2",
+            "typeName": {
+              "id": 1361,
+              "name": "uint256",
+              "nodeType": "ElementaryTypeName",
+              "src": "200:7:2",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            }
+          }
+        ],
+        "scope": 1364,
+        "src": "152:3359:2"
+      }
+    ],
+    "src": "0:3513:2"
+  },
+  "legacyAST": {
+    "absolutePath": "/C/Users/solus/documents/solidity/dex/contracts/DEXGettersMisc.sol",
+    "exportedSymbols": {
+      "DEX": [
+        930
+      ],
+      "DEXGettersMisc": [
+        1363
+      ],
+      "DEXWallet": [
+        1616
+      ],
+      "SafeMath": [
+        2139
+      ]
+    },
+    "id": 1364,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 1356,
+        "literals": [
+          "solidity",
+          "^",
+          "0.8",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:2"
+      },
+      {
+        "absolutePath": "/C/Users/solus/documents/solidity/dex/contracts/DEXWallet.sol",
+        "file": "./DEXWallet.sol",
+        "id": 1357,
+        "nodeType": "ImportDirective",
+        "scope": 1364,
+        "sourceUnit": 1617,
+        "src": "27:25:2",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "/C/Users/solus/documents/solidity/dex/contracts/DEX.sol",
+        "file": "./DEX.sol",
+        "id": 1358,
+        "nodeType": "ImportDirective",
+        "scope": 1364,
+        "sourceUnit": 931,
+        "src": "54:19:2",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "/C/Users/solus/documents/solidity/dex/node_modules/@openzeppelin/contracts/utils/math/SafeMath.sol",
+        "file": "../node_modules/@openzeppelin/contracts/utils/math/SafeMath.sol",
+        "id": 1359,
+        "nodeType": "ImportDirective",
+        "scope": 1364,
+        "sourceUnit": 2140,
+        "src": "75:73:2",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "fullyImplemented": true,
+        "id": 1363,
+        "linearizedBaseContracts": [
+          1363
+        ],
+        "name": "DEXGettersMisc",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "id": 1362,
+            "libraryName": {
+              "id": 1360,
+              "name": "SafeMath",
+              "nodeType": "IdentifierPath",
+              "referencedDeclaration": 2139,
+              "src": "187:8:2"
+            },
+            "nodeType": "UsingForDirective",
+            "src": "181:27:2",
+            "typeName": {
+              "id": 1361,
+              "name": "uint256",
+              "nodeType": "ElementaryTypeName",
+              "src": "200:7:2",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            }
+          }
+        ],
+        "scope": 1364,
+        "src": "152:3359:2"
+      }
+    ],
+    "src": "0:3513:2"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.8.0+commit.c7dfd78e.Emscripten.clang"
+  },
+  "networks": {
+    "5777": {
+      "events": {},
+      "links": {},
+      "address": "0x090fA390FA2f297A7C73E02dc58e47Dfc4294429",
+      "transactionHash": "0x915c6c4796d5897af4d265deb671c8bffa725aab3da33e3d8b574639b9b67d33"
+    }
+  },
+  "schemaVersion": "3.4.1",
+  "updatedAt": "2021-06-21T18:08:07.380Z",
+  "networkType": "ethereum",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {},
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "version": 1
+  }
+}
